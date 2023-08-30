@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio 4</title>
+    <style>
+        h1{font:20pt Arial;
+        }
+        button{
+            padding:30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    <button onclick="açao1()">Comprar Produto</button>
+
+<script>
+function açao1(){
+    let item = window.prompt('Que produto você está comprando?')
+
+    let v1 = Number( window.prompt(`Quanto custa ${item} que você está comprando?`))
+    let v2 = v1.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+
+    let p1 = Number(window.prompt(`Qual foi o valor que você deu para pagar ${item}?`))
+    let p2 = p1.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+   
+    let t1 = (p1-v1)
+    let t2 = t1.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+    
+    window.alert(` Você comprou ${item} que custou ${v2}. Deu ${p2} em dinheiro e vai receber ${t2} de troco.\n
+    Volte Sempre!
+    `)
+}
+</script>
+</body>
+</html>

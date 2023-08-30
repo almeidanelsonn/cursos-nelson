@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio 6</title>
+    <style>
+        h1{font:20pt Arial;
+        }
+        button{
+            padding:30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <button onclick="Temperatura()">Converter</button>
+    <section id="res">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+
+<script>
+function Temperatura(){
+    let cel= Number(window.prompt('Digite a temperatura em ˚C(Celsius):'))
+
+    let far= (cel*1.8+32)
+
+    let kel= (cel+273.15)
+
+    let resp = document.getElementById('res')
+    resp.innerHTML= `<h2><strong>A temperatura de ${cel}, corresponde a...</strong></h2>
+    <p>
+    ${far}(˚F)Fahrenheit.<br>
+    ${kel}(˚K)Kelvin
+    </p>`
+    }
+</script>
+</body>
+</html>

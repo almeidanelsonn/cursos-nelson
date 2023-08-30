@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio 5</title>
+    <style>
+        h1{font:20pt Arial;
+        }
+        button{
+            padding:30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <button onclick="Distancia()">Converter</button>
+    <section id="Respostas">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+
+<script>
+function Distancia(){
+    let dist = Number.parseFloat( window.prompt('Digite uma distancia em metros(m):'))
+    dist.toFixed(3).replace('.', ',')
+
+
+    let d1 = document.getElementById('Respostas')
+    
+    d1.innerHTML=`<h2> A distância de ${dist} metros, corresponde a...</h2>
+    <p>${dist/1000} quilômetros(Km)<br>
+    ${dist/100} hectômetros(Hm)<br>
+    ${dist/10} Decâmetros(Dam)<br>
+    ${dist*10} decimetros(dm)<br>
+    ${dist*100} centimetros(cm)<br>
+    ${dist*1000} milimetros(mm)</p>`
+    }
+</script>
+</body>
+</html>

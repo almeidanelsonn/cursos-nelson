@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio 7</title>
+    <style>
+        h1{font:20pt Arial;
+        }
+        button{
+            padding:30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor Monetario</h1>
+    <button onclick="Money()">Converter</button>
+    <section id="res">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+
+<script>
+let cota= window.prompt('Antes de mais nada qual a cotação do dolar')
+function Money(){
+    let Quanto= window.prompt('Quantos Reais você quer converter?')
+
+    let dol= (Quanto/cota)
+
+    let resp = document.getElementById('res')
+    dol.toLocaleString('pt-BR', {style: 'currency', currency :'USD'})
+    Quanto.toLocaleString('pt-BR', {style: 'currency', currency :'BRL'})
+
+    resp.innerHTML= `<h1> Você possui ${Quanto}.
+        </h1>
+        <p> Que converte para ${dol}.
+    `
+    }
+</script>
+</body>
+</html>

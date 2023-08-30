@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio 8</title>
+    <style>
+        h1{font:20pt Arial;
+        }
+        button{
+            padding:30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando Desconto</h1>
+    <button onclick="açao1()">Desconto de 10%</button>
+    <section id="result">Clique no botão acima para começar.
+    </section>
+
+<script>
+function açao1(){
+    let item = window.prompt('Que produto você está comprando?')
+
+    let p1 = Number(window.prompt(`Qual é o preço do ${item}?`))
+    let p2 = p1.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+
+    let desc= p2/10
+    let desc2 = desc.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+
+    let total= p2/10*11
+    let total2 = total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+
+    let resultado = document.getElementById('result')
+    resultado.innerHTML=`<h2> Calculando desconto de 10% para ${item}</h2>
+    <p>O preço original era ${p2}.<br>
+        Você acaba de ganhar um desconto de ${desc2}.<br>
+        No fim, você vai pagar ${total2} no proximo ${item}
+    
+`
+}
+</script>
+</body>
+</html>
